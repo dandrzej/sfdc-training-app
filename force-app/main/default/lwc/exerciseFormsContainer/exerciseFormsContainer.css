@@ -1,0 +1,35 @@
+.pill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--slds-g-color-brand-base-50, #f3f2f2);
+  border: 1px solid var(--slds-g-color-border-base-1, #dddbda);
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+}
+.pill:hover {
+  background: var(--slds-g-color-brand-base-95, #ecebea);
+}
+
+
+
+
+
+.centered-1of3 {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 48rem) { /* SLDS "medium" breakpoint (~768px) */
+  .centered-1of3 {
+    width: 66.3333%;
+    max-width: 66.3333%;
+  }
+}

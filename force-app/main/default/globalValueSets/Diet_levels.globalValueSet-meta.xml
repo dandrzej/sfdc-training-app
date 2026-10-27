@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Low</fullName>
+        <default>false</default>
+        <label>Low</label>
+    </customValue>
+    <customValue>
+        <fullName>Mid</fullName>
+        <default>false</default>
+        <label>Mid</label>
+    </customValue>
+    <customValue>
+        <fullName>High</fullName>
+        <default>false</default>
+        <label>High</label>
+    </customValue>
+    <customValue>
+        <fullName>ULTRA</fullName>
+        <default>false</default>
+        <label>ULTRA</label>
+    </customValue>
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>None</label>
+    </customValue>
+    <masterLabel>Diet levels</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,24 @@
+.INCREASE {
+  background-color: #e6ffe6; /* light green background */
+  border: 1px solid #28a745; /* green border */
+  color: #155724; /* dark green text */
+}
+
+.STAY  {
+  background-color: #e6f0ff; /* light blue background */
+  border: 1px solid #0070d2; /* Salesforce blue border */
+  color: #004080; /* dark blue text */
+}
+
+
+.DECREASE {
+  background-color: #ffe6e6; /* light red background */
+  border: 1px solid #c23934; /* Salesforce red border */
+  color: #7f1d1d; /* dark red text */
+}
+
+.ALREADY_USED {
+  background-color: #d654c4; /* light yellow background */
+  border: 1px solid #ffc107; /* yellow border */
+  color: #856404; /* dark yellow text */
+}

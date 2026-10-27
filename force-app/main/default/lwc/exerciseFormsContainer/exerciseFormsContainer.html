@@ -1,0 +1,40 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading program form..." size="medium"></lightning-spinner>
+    </template>
+
+    <!-- equipment types START-->
+    <div class="slds-grid slds-grid_align-center">
+        <template for:each={equipmentTypes} for:item="equipmentType">
+            <div key={equipmentType} class="slds-col">
+                <lightning-button label={equipmentType} variant="brand" data-value={equipmentType}
+                    onclick={handleEquipmentToggle}>
+                </lightning-button>
+            </div>
+        </template>
+    </div>
+    <!-- equipment types END-->
+
+    <div class=" slds-grid slds-grid_align-center">
+        <!--TODO1 change to https://developer.salesforce.com/docs/platform/lightning-component-reference/guide/lightning-button-group.html?type=Example -->
+        <lightning-radio-group name="radioGroup" options={radioOptions} value={value} type="button"
+            onchange={handleRadioChange}></lightning-radio-group>
+    </div>
+    <lightning-tabset variant="scoped" class="slds-tabs_scoped__item">
+        <template lwc:if={showExerciseForm}>
+            <template for:each={tabs} for:item="tab">
+                <lightning-tab key={tab} label={tab} onactive={handleSelectTab}>
+                    <div class="form-container">
+                        <template lwc:if={exercises}>
+                            <template for:each={exercises} for:item="exercise">
+                                <div key={exercise.Id}>
+                                    <c-exercise-form training-id={recordId} exercise={exercise}></c-exercise-form>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-tab>
+            </template>
+        </template>
+    </lightning-tabset>
+</template>

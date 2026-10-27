@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>dataToText</name>
+        <dataType>String</dataType>
+        <expression>TEXT(DAY({!$Record.Training_date__c})) +&apos;.&apos;+  TEXT(MONTH({!$Record.Training_date__c})) +&apos;.&apos;+ TEXT(YEAR({!$Record.Training_date__c}))</expression>
+    </formulas>
+    <interviewLabel>Traning - After Create Update - Fields update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Traning - After Create Update - Fields update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>GET_TrainingReadinessValue</name>
+        <label>GET trainingReadiness</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UPD_ReadynessFieldUpdate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Training_date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Readiness__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>UPD_ReadynessFieldUpdate</name>
+        <label>Update Training.Readiness</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Readiness_level__c</field>
+            <value>
+                <elementReference>GET_TrainingReadinessValue.Readiness_level__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GET_TrainingReadinessValue</targetReference>
+        </connector>
+        <object>Training__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

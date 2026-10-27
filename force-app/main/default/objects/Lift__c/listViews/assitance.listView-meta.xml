@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>assitance</fullName>
+    <columns>NAME</columns>
+    <columns>Number_of_trainings__c</columns>
+    <columns>MMax_weight__c</columns>
+    <columns>Reps_of_max_weight__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>assitance</label>
+</ListView>

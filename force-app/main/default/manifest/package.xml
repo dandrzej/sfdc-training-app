@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+
+        <members>DietEntryController</members>
+
+        <members>MetadataService</members>
+
+        <members>programController</members>
+
+        <name>ApexClass</name>
+
+    </types>
+
+    <types>
+
+        <members>Training</members>
+
+        <name>CustomApplication</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_entry__c.Carbs__c</members>
+
+        <members>Diet_entry__c.Consumption_DataTime__c</members>
+
+        <members>Diet_entry__c.Description__c</members>
+
+        <members>Diet_entry__c.Fats__c</members>
+
+        <members>Diet_entry__c.Greens__c</members>
+
+        <members>Diet_entry__c.Protein__c</members>
+
+        <members>Diet_entry__c.has_next_steps__c</members>
+
+        <members>Diet_entry__c.inMinus__c</members>
+
+        <members>Diet_entry__c.inPlus__c</members>
+
+        <members>Diet_entry__c.next_steps__c</members>
+
+        <members>Exercise__c.Lift__c</members>
+
+        <members>Exercise__c.Lift_notes__c</members>
+
+        <members>Exercise__c.Number_of_reps__c</members>
+
+        <members>Exercise__c.Number_of_sets__c</members>
+
+        <members>Exercise__c.Progress__c</members>
+
+        <members>Exercise__c.Record_reps__c</members>
+
+        <members>Exercise__c.Record_weight__c</members>
+
+        <members>Exercise__c.Training__c</members>
+
+        <members>Exercise__c.Training_date__c</members>
+
+        <members>Exercise__c.Weight__c</members>
+
+        <members>Exercise__c.comment__c</members>
+
+        <members>Exercise__c.previous_comment__c</members>
+
+        <members>Exercise__c.previous_training_reps__c</members>
+
+        <members>Exercise__c.previous_training_weight__c</members>
+
+        <members>Lift__c.Favorite__c</members>
+
+        <members>Lift__c.MMax_weight__c</members>
+
+        <members>Lift__c.Movement_patern__c</members>
+
+        <members>Lift__c.Number_of_trainings__c</members>
+
+        <members>Lift__c.Program__c</members>
+
+        <members>Lift__c.Reps_of_max_weight__c</members>
+
+        <members>Lift__c.Targeted_muscle__c</members>
+
+        <members>Lift__c.Type__c</members>
+
+        <members>Lift__c.comment__c</members>
+
+        <members>Program_Exercise__c.Lift__c</members>
+
+        <members>Program_Exercise__c.Program__c</members>
+
+        <members>Program_Exercise__c.Progres_Reps__c</members>
+
+        <members>Program_Exercise__c.Sets__c</members>
+
+        <members>Program__c.Important_data__c</members>
+
+        <members>Readiness__c.BF__c</members>
+
+        <members>Readiness__c.Central_fatigue__c</members>
+
+        <members>Readiness__c.Custome_entry__c</members>
+
+        <members>Readiness__c.Injury__c</members>
+
+        <members>Readiness__c.LBM__c</members>
+
+        <members>Readiness__c.Mood__c</members>
+
+        <members>Readiness__c.Motivation__c</members>
+
+        <members>Readiness__c.Neck_circumference__c</members>
+
+        <members>Readiness__c.Pain_description__c</members>
+
+        <members>Readiness__c.Readiness_level__c</members>
+
+        <members>Readiness__c.Sleep__c</members>
+
+        <members>Readiness__c.Sleep_duration__c</members>
+
+        <members>Readiness__c.Soreness_areas__c</members>
+
+        <members>Readiness__c.Soreness_level__c</members>
+
+        <members>Readiness__c.Stress_level__c</members>
+
+        <members>Readiness__c.Training__c</members>
+
+        <members>Readiness__c.Waist_circumference__c</members>
+
+        <members>Readiness__c.Weight__c</members>
+
+        <members>Readiness__c.date__c</members>
+
+        <members>Readiness__c.description__c</members>
+
+        <members>Training__c.Readiness_level__c</members>
+
+        <members>Training__c.Title__c</members>
+
+        <members>Training__c.Training_date__c</members>
+
+        <members>Training__c.description__c</members>
+
+        <name>CustomField</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_entry__c</members>
+
+        <members>Exercise__c</members>
+
+        <members>Lift__c</members>
+
+        <members>Program_Exercise__c</members>
+
+        <members>Program__c</members>
+
+        <members>Readiness__c</members>
+
+        <members>Training__c</members>
+
+        <name>CustomObject</name>
+
+    </types>
+
+
+    <types>
+
+        <members>Mobile_User_profileSessionSetting1749651982734</members>
+
+        <members>PT1_profileSessionSetting1740026011694</members>
+
+        <name>ProfileSessionSetting</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_entry__c-Diet entry Layout</members>
+
+        <members>Exercise__c-Exercise Layout</members>
+
+        <members>Lift__c-Lift Layout</members>
+
+        <members>Program_Exercise__c-Program Exercise Layout</members>
+
+        <members>Program__c-Program Layout</members>
+
+        <members>Readiness__c-Readiness Layout</members>
+
+        <members>Training__c-Training Layout</members>
+
+        <name>Layout</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet</members>
+
+        <members>Diet_entry__c</members>
+
+        <members>Exercise__c</members>
+
+        <members>Lift__c</members>
+
+        <members>Program__c</members>
+
+        <members>Readiness_Questionnaire</members>
+
+        <members>Readiness__c</members>
+
+        <members>Training__c</members>
+
+        <name>CustomTab</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet</members>
+
+        <members>Training_Page</members>
+
+        <members>Training_UtilityBar</members>
+
+        <members>homePage</members>
+
+        <name>FlexiPage</name>
+
+    </types>
+
+    <types>
+
+        <members>DietEntry_BeforeCreateUpdate_SetHasNextStepsFlag</members>
+
+        <members>Exercise_AfterCreateUpdate_SetExerciseData</members>
+
+        <members>Exercise_AfterCreateUpdate_UpdateLiftMaxes</members>
+
+        <members>Exercise_AfterDeletion_RestorePreviousLiftRecords</members>
+
+        <members>Readiness_AfterCreateUpdate_FieldsUpdate</members>
+
+        <members>Training_AfterCreateUpdate_FieldsUpdate</members>
+
+        <members>Training_SCH_DeleteTrainingWithoutRelatedExercise</members>
+
+        <name>Flow</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_levels</members>
+
+        <members>Muscles</members>
+
+        <members>X1_10</members>
+
+        <name>GlobalValueSet</name>
+
+    </types>
+
+    <types>
+
+        <members>dietRecordCreator</members>
+
+        <members>dietRecordGraph</members>
+
+        <members>exerciseForm</members>
+
+        <members>exerciseFormsContainer</members>
+
+        <members>readinessCreator</members>
+
+        <members>richTextDatatable</members>
+
+        <members>todayTrainingRecord</members>
+
+        <name>LightningComponentBundle</name>
+
+    </types>
+
+    <types>
+
+        <members>DietEntrySaved</members>
+
+        <name>LightningMessageChannel</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_entry__c.All</members>
+
+        <members>Exercise__c.All</members>
+
+        <members>Lift__c.All</members>
+
+        <members>Lift__c.assitance</members>
+
+        <members>Lift__c.main</members>
+
+        <members>Program__c.All</members>
+
+        <members>Readiness__c.All</members>
+
+        <members>Training__c.All</members>
+
+        <name>ListView</name>
+
+    </types>
+
+    <types>
+
+        <members>Diet_entry__c</members>
+
+        <members>Exercise__c</members>
+
+        <members>Lift__c</members>
+
+        <members>Program_Exercise__c</members>
+
+        <members>Program__c</members>
+
+        <members>Readiness__c</members>
+
+        <members>Training__c</members>
+
+        <name>SharingRules</name>
+
+    </types>
+
+    <types>
+
+        <members>Training__c.Add_exervise</members>
+
+        <name>QuickAction</name>
+
+    </types>
+
+    <types>
+
+        <members>Admin</members>
+
+        <members>Mobile User</members>
+
+        <name>Profile</name>
+
+    </types>
+
+    <version>63.0</version>
+
+</Package>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>DEC_IsCustomEntr</name>
+        <label>is Custome Entry?</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>UPD_SetReadiness_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>OUT_IsCustomEntry_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Custome_entry__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GET_Training_LastBeforeCurrent_ForCustomEntry</targetReference>
+            </connector>
+            <label>Custom Entry = True</label>
+        </rules>
+    </decisions>
+    <description>Fixed SET_LastTraning on Custome entry</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>FML_DaylightSavingIndicator</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+  OR(
+    MONTH(DATEVALUE($Flow.CurrentDateTime)) &lt; 3,
+    MONTH(DATEVALUE($Flow.CurrentDateTime)) &gt; 10
+  ),
+  1,
+  IF(
+    AND(
+      MONTH(DATEVALUE($Flow.CurrentDateTime)) &gt; 3,
+      MONTH(DATEVALUE($Flow.CurrentDateTime)) &lt; 10
+    ),
+    /* Apr–Sep → Summer */
+    2,
+    /* March or October → compute boundary Sundays */
+    IF(
+      /* MARCH boundary: last Sunday of March */
+      MONTH(DATEVALUE($Flow.CurrentDateTime)) = 3,
+      IF(
+        DAY(DATEVALUE($Flow.CurrentDateTime)) &gt;=
+        31 - (WEEKDAY(DATE(YEAR(DATEVALUE($Flow.CurrentDateTime)), 3, 31)) - 1),
+        2, /* On/after last Sunday in March → Summer */
+        1  /* Before last Sunday in March → Winter */
+      ),
+      /* OCTOBER boundary: last Sunday of October */
+      IF(
+        DAY(DATEVALUE($Flow.CurrentDateTime)) &lt;
+        31 - (WEEKDAY(DATE(YEAR(DATEVALUE($Flow.CurrentDateTime)), 10, 31)) - 1),
+        2, /* Before last Sunday in October → Summer */
+        1  /* On/after last Sunday in October → Winter */
+      )
+    )
+  )
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>converts sfdc date to dd.mm.yyyy format</description>
+        <name>FML_Readiness_DisplayName</name>
+        <dataType>String</dataType>
+        <expression>CASE(WEEKDAY(DATEVALUE({!$Record.CreatedDate})),1, &apos;Niedziela&apos;,2,&apos;Poniedziałek&apos;,3,&apos;Wtorek&apos;,4,&apos;Środa&apos;,5,&apos;Czwartek&apos;,6,&apos;Piątek&apos;,7,&apos;Sobota&apos;,&apos;Błąd daty&apos;) + &apos; - &apos; +
+TEXT(HOUR(TIMEVALUE({!$Record.CreatedDate}))+{!FML_DaylightSavingIndicator})+ &quot;:&quot;+
+IF(LEN(TEXT(MINUTE(TIMEVALUE({!$Record.CreatedDate})))) = 1, &apos;0&apos;+TEXT(MINUTE(TIMEVALUE({!$Record.CreatedDate}))) , TEXT(MINUTE(TIMEVALUE({!$Record.CreatedDate}))))</expression>
+    </formulas>
+    <interviewLabel>Readiness - After Create Update - Fields Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Readiness - After Create Update - Fields Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>GET_Training_LastBeforeCurrent</name>
+        <label>GET last training</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UPD_SetReadiness_LastTraining</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Training_date__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>$Record.date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Training__c</object>
+        <sortField>Training_date__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GET_Training_LastBeforeCurrent_ForCustomEntry</name>
+        <label>GET last Training</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UPD_SetReadiness_LastTraining_Custom</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Training_date__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <elementReference>$Record.date__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Training__c</object>
+        <sortField>Training_date__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>UPD_SetReadiness_LastTraining</name>
+        <label>SET last training</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>Training__c</field>
+            <value>
+                <elementReference>GET_Training_LastBeforeCurrent.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SetReadiness_LastTraining_Custom</name>
+        <label>SET last training</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Training__c</field>
+            <value>
+                <elementReference>GET_Training_LastBeforeCurrent_ForCustomEntry.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UPD_SetReadiness_Name</name>
+        <label>SET record Name</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>GET_Training_LastBeforeCurrent</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>FML_Readiness_DisplayName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>DEC_IsCustomEntr</targetReference>
+        </connector>
+        <object>Readiness__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

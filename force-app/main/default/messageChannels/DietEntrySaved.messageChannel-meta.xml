@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Published when a Diet_entry__c record is created or updated</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>Diet entry record Id</description>
+        <fieldName>recordId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>create or update</description>
+        <fieldName>action</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Diet Entry Saved</masterLabel>
+</LightningMessageChannel>

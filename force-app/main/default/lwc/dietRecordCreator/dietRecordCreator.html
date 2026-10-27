@@ -1,0 +1,43 @@
+<template>
+    <!-- start debrifing old 
+    <lightning-card>
+        
+        <template for:each={debrifeRecordId} for:item="abcd">
+            <lightning-record-view-form key={abcd.Id} object-api-name={object} record-id={abcd.Id}>
+                <lightning-output-field field-name={next}> </lightning-output-field>
+            </lightning-record-view-form>
+        </template>
+    </lightning-card>
+    end debrifing old -->
+    <lightning-card title="Helpful data">
+        <lightning-accordion allow-multiple-sections-open>
+            <lightning-accordion-section label="Eating notes">
+                <template for:each={debrifeRecordId} for:item="abcd">
+                    <lightning-record-view-form key={abcd.Id} object-api-name={object} record-id={abcd.Id}>
+                        <lightning-output-field field-name={next}> </lightning-output-field>
+                    </lightning-record-view-form>
+                </template>
+            </lightning-accordion-section>
+
+            <lightning-accordion-section label="Portion sizes">
+                Contact related information
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+    <lightning-card>
+        <lightning-record-edit-form object-api-name={object} onsuccess={handleSuccess} onerror={handleError}>
+            <!-- Show platform validation and server errors -->
+            <lightning-messages></lightning-messages>
+
+            <!-- Render input fields dynamically from the passed-in fields array -->
+            <template for:each={fields} for:item="field">
+                <lightning-input-field key={field} field-name={field}></lightning-input-field>
+            </template>
+            <!-- Actions -->
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" type="submit" label="Save">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#ED3D33</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Training</label>
+    <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>Readiness_Questionnaire</tabs>
+    <tabs>Training__c</tabs>
+    <tabs>Diet_entry__c</tabs>
+    <tabs>Lift__c</tabs>
+    <tabs>Diet</tabs>
+    <tabs>Readiness__c</tabs>
+    <tabs>Program__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Training_UtilityBar</utilityBar>
+</CustomApplication>

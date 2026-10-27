@@ -1,0 +1,53 @@
+<template>
+
+    <lightning-card title="Diet Entries" icon-name="custom:custom63">
+        <!-- Loading state -->
+        <template if:true={loading}>
+            <div class="slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </div>
+        </template>
+        <!-- Table -->
+        <template if:true={hasData}>
+            <c-rich-text-datatable key-field="Id" data={dietEntires} columns={columns} hide-checkbox-column
+                column-widths-mode="auto">
+            </c-rich-text-datatable>
+        </template>
+
+        <!-- Empty state -->
+        <template if:true={isEmpty}>
+            <div class="slds-p-around_medium slds-text-color_weak">
+                No records to display
+            </div>
+        </template>
+
+        <!-- Error state -->
+        <template if:true={error}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                {errorMessage}
+            </div>
+        </template>
+    </lightning-card>
+    <!-- SUMMARY BELOW THE <ul> -->
+    <!-- SUMMARY BELOW THE <ul> -->
+
+
+
+    <div class="slds-m-top_small">
+        <article class="slds-card summary-card">
+            <div class="slds-card__body slds-card__body_inner">
+                <p class="slds-text-heading_medium">
+                    Protein today: {todayProtein}
+                    <br>REMAINING: {remainingProteinConsumption}
+                </p>
+                <p class="slds-text-heading_medium">
+                    Kcal today: {kcal.today}
+                </p>
+                <p class="slds-text-heading_medium">
+                    Avarage protein consumption: {avarageProtein}
+                    <br>Avarage Kcal: {kcal.avarage}
+                </p>
+            </div>
+        </article>
+    </div>
+</template>

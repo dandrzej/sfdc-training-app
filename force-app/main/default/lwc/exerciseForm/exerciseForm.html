@@ -1,0 +1,29 @@
+<template>
+    <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess}>
+        <lightning-messages></lightning-messages>
+        <div class={formStyle}>
+            <!-- <div class="slds-form slds-form_stacked slds-form_horizontal-medium slds-p-horizontal_medium"> -->
+            <!-- <div class="slds-grid slds-gutters slds-p-horizontal_medium"> -->
+            <div class={deviceSizing}>
+                <lightning-input-field field-name={formFieldTrainingId} value={trainingId}
+                    class="slds-hide"></lightning-input-field>
+                <lightning-input-field field-name={liftId} value={exercise.Lift__c}></lightning-input-field>
+                <lightning-input-field field-name={liftSets} value={exercise.Number_of_sets__c}></lightning-input-field>
+                <lightning-input-field field-name={liftWeight} value={exercise.Weight__c}></lightning-input-field>
+                <lightning-input-field field-name={liftReps} value={exercise.Number_of_reps__c}></lightning-input-field>
+                <lightning-input-field field-name={progress}></lightning-input-field>
+                <lightning-input-field field-name={trainingDate} value={exercise.Training_date__c}
+                    readonly></lightning-input-field>
+            </div>
+            <template lwc:if={exercise.comment__c}>
+                <lightning-input-field field-name={previousComment} value={exercise.comment__c}
+                    readonly></lightning-input-field>
+            </template>
+            <lightning-input-field field-name={comment}></lightning-input-field>
+            <div class="slds-p-horizontal_medium">
+                <lightning-button type="submit" variant="success" label="Save" stretch
+                    disabled={exercise.alreadyUsed}></lightning-button>
+            </div>
+        </div>
+    </lightning-record-edit-form>
+</template>

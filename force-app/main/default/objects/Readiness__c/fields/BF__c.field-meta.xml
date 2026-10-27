@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BF__c</fullName>
+    <formula>IF(OR( ISBLANK(Waist_circumference__c ) , ISBLANK(Neck_circumference__c )),   NULL, 
+0.01 *(
+495 / (
+    1.0324
+    - 0.19077 * ( LN(  Waist_circumference__c  -  Neck_circumference__c ) / LN(10) )
+    + 0.15456 * ( LN( 182) / LN(10) )
+  ) - 450)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>BF%</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Important_data__c</fullName>
+    <description>Selected exercise fields will be visible on component program on training record</description>
+    <label>Important data</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Record Weight</fullName>
+                <default>false</default>
+                <label>Record Weight</label>
+            </value>
+            <value>
+                <fullName>Record Reps</fullName>
+                <default>false</default>
+                <label>Record Reps</label>
+            </value>
+            <value>
+                <fullName>Previous Training Weight</fullName>
+                <default>false</default>
+                <label>Previous Training Weight</label>
+            </value>
+            <value>
+                <fullName>Previous Training Reps</fullName>
+                <default>false</default>
+                <label>Previous Training Reps</label>
+            </value>
+            <value>
+                <fullName>Progress</fullName>
+                <default>false</default>
+                <label>Progress</label>
+            </value>
+            <value>
+                <fullName>Lift</fullName>
+                <default>false</default>
+                <label>Lift</label>
+            </value>
+            <value>
+                <fullName>Sets</fullName>
+                <default>false</default>
+                <label>Sets</label>
+            </value>
+            <value>
+                <fullName>Reps</fullName>
+                <default>false</default>
+                <label>Reps</label>
+            </value>
+            <value>
+                <fullName>Weight</fullName>
+                <default>false</default>
+                <label>Weight</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Training Date</fullName>
+                <default>false</default>
+                <label>Training Date</label>
+            </value>
+            <value>
+                <fullName>Comment</fullName>
+                <default>false</default>
+                <label>Comment</label>
+            </value>
+            <value>
+                <fullName>Lift Notes</fullName>
+                <default>false</default>
+                <label>Lift Notes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

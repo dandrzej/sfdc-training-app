@@ -1,0 +1,55 @@
+/*
+/* Outer container */
+
+
+/* Each segment */
+.segment {
+  flex: 1;                     /* ✅ equal height */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Remove last divider */
+.segment:last-child {
+  border-bottom: none;
+}
+
+/* Colors */
+.segment--red   { background-color: red; }
+.segment--blue  { background-color: blue; }
+.segment--green { background-color: green; }
+
+
+
+
+
+.grade {
+    display: inline-block;
+    padding: 0.0625rem 0.375rem; /* 1px top/bottom, 6px left/right */
+    border-radius: 0.25rem;      /* 4px */
+    line-height: 1.2;
+    font-weight: 700;            /* bold */
+}
+
+/* None & Low: light green background + green bold text */
+.grade--none {
+    background-color: #e6f4ea;  /* light green */
+    color: #0a6f3c;             /* strong green for text */
+}
+
+/* Mid: blue background + black bold text */
+.grade--mid {
+    background-color: #e7f3ff;  /* light blue */
+    color: #1f1f1f;             /* black-ish */
+}
+
+/* High: "Velvet" (purple family) background + black bold text */
+.grade--high {
+    background-color: #f3e8ff;  /* light lavender/velvet */
+    color: #1f1f1f;
+}
+
+/* ULTRA: red background + black bold text */
+.grade--ultra {
+    background-color: #fdecea;  /* light red */
+    color: #1f1f1f;
+}

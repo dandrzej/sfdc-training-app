@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Glutes</fullName>
+        <default>false</default>
+        <label>Glutes</label>
+    </customValue>
+    <customValue>
+        <fullName>Hamstring</fullName>
+        <default>false</default>
+        <label>Hamstring</label>
+    </customValue>
+    <customValue>
+        <fullName>Quads</fullName>
+        <default>false</default>
+        <label>Quads</label>
+    </customValue>
+    <customValue>
+        <fullName>Calves</fullName>
+        <default>false</default>
+        <label>Calves</label>
+    </customValue>
+    <customValue>
+        <fullName>Adductors</fullName>
+        <default>false</default>
+        <label>Adductors</label>
+    </customValue>
+    <customValue>
+        <fullName>Abductors</fullName>
+        <default>false</default>
+        <label>Abductors</label>
+    </customValue>
+    <customValue>
+        <fullName>Shoulder - front</fullName>
+        <default>false</default>
+        <label>Shoulder - front</label>
+    </customValue>
+    <customValue>
+        <fullName>Shoulder - back</fullName>
+        <default>false</default>
+        <label>Shoulder - back</label>
+    </customValue>
+    <customValue>
+        <fullName>Shoulder - side</fullName>
+        <default>false</default>
+        <label>Shoulder - side</label>
+    </customValue>
+    <customValue>
+        <fullName>ABS</fullName>
+        <default>false</default>
+        <label>ABS</label>
+    </customValue>
+    <customValue>
+        <fullName>Obliques</fullName>
+        <default>false</default>
+        <label>Obliques</label>
+    </customValue>
+    <customValue>
+        <fullName>Spinal erectors</fullName>
+        <default>false</default>
+        <label>Spinal erectors</label>
+    </customValue>
+    <customValue>
+        <fullName>Bicep</fullName>
+        <default>false</default>
+        <label>Bicep</label>
+    </customValue>
+    <customValue>
+        <fullName>Tricep</fullName>
+        <default>false</default>
+        <label>Tricep</label>
+    </customValue>
+    <customValue>
+        <fullName>Traps</fullName>
+        <default>false</default>
+        <label>Traps</label>
+    </customValue>
+    <customValue>
+        <fullName>Chest</fullName>
+        <default>false</default>
+        <label>Chest</label>
+    </customValue>
+    <customValue>
+        <fullName>Lats</fullName>
+        <default>false</default>
+        <label>Lats</label>
+    </customValue>
+    <customValue>
+        <fullName>Upper Back - Rhomboids</fullName>
+        <default>false</default>
+        <label>Upper Back - Rhomboids</label>
+    </customValue>
+    <customValue>
+        <fullName>Rotator Cuff</fullName>
+        <default>false</default>
+        <label>Rotator Cuff</label>
+    </customValue>
+    <description>targeted muscles of exercises used in lifts and readiness.sorness</description>
+    <masterLabel>Muscles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
